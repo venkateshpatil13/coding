@@ -1,0 +1,52 @@
+Ram's house has an apple tree and an orange tree. In the diagram below, the red region denotes his house, where s is the start point, and t is the endpoint. The apple tree is to the left of his house, and the orange tree is to its right. You can assume the trees are located on a single point, where the apple tree is at point a, and the orange tree is at point b.When a fruit falls from its tree, it lands d units of distance from its tree of origin along the x-axis. A negative value of d means the fruit fell d units to the tree's left, and a positive value of d means it falls d units to the tree's right. Given the value of d for 3 apples and 3 oranges, determine how many apples and oranges will fall on Ram's house (i.e., in the inclusive range [s,t]?
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+
+int main() {
+    int i,s,t,a,b,x,y,z,w,m,n,d1[100],d2[100],count=0,count1=0;
+    scanf("%d%d",&s,&t);
+    scanf("%d%d",&a,&b);
+    scanf("%d%d",&m,&n);
+    if(s>a&&t<b&&t>s)
+    {
+    for(i=0;i<m;i++)
+    {
+        scanf("%d",&d1[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&d2[i]);
+    }
+        
+        for(i=0;i<m;i++) { if(d1[i]>0)
+            {
+                x=s-a;
+                w=t-a;
+                if(d1[i]>=x&&d1[i]<=w)
+                   
+                {count++;}
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            if(d2[i]<0)
+            {y=t-b;
+             z=s-b;
+                if(d2[i]<=y&&d2[i]>=z)
+                {
+                    count1++;
+                }
+            }
+        }
+        
+        printf("Apple count = %d\n",count);
+        printf("Orange count = %d",count1);
+    }
+    else
+        printf("Invalid input");
+    
+    
+}
