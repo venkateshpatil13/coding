@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void read(int a[100],int n);
+void display(int a[100],int n);
+
+int main() {
+    int a[100];
+    int n;
+    scanf("%d",&n);
+    if(n!=0){
+    read(a,n);
+    display(a,n);
+    }
+    if(n<=0)
+    {
+        printf("Elements should be more than 0.");
+    }
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+void read(int a[100],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+}
+void display(int a[100],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",a[i]);
+    }
+}
